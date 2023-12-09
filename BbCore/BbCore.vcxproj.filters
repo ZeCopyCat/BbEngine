@@ -4,8 +4,12 @@
     <ClInclude Include="src\core\Application.h" />
     <ClInclude Include="src\core\Macros.h" />
     <ClInclude Include="src\Bb.h" />
+    <ClInclude Include="src\core\Log.h" />
+    <ClInclude Include="src\core\LogManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
+    <ClCompile Include="src\core\Log.cpp" />
+    <ClCompile Include="src\core\LogManager.cpp" />
   </ItemGroup>
 </Project>

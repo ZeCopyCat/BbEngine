@@ -1,38 +1,47 @@
 #include "Application.h"
 
-#include <stdio.h>
+#include "LogManager.h"
+#include "Log.h" //D
 
-using namespace Bb;
+namespace Bb {
 
-Application* Application::m_singleton = nullptr;
+	Application* Application::s_Instance = nullptr;
 
-Application::Application()
-{
+	Application::Application()
+	{
 
-	printf("Feels good to be king.");
-	while (true);
+		LogManager::Initialize();
 
-}
+		Log("It's great to be a hero!");
+		Log("But would it be so bad...", LogLevel::Warning);
+		Log("To be the villain for a change?", LogLevel::Error);
+		while (true);
 
-Application::~Application()
-{
+	}
 
-}
+	Application::~Application()
+	{
 
-void Application::Run()
-{
+	}
 
-	if (m_singleton)
-		return;
+	void Application::Run()
+	{
 
-	m_singleton = new Application();
+		//Don't allow someone to run more than once.
+		if (s_Instance)
+			return;
 
-}
+		//Throw a singleton onto the heap.
+		s_Instance = new Application();
+
+	}
 
 
-Application& Application::Get()
-{
+	Application& Application::Get()
+	{
 
-	return *m_singleton;
+		return *s_Instance;
+
+	}
 
 }

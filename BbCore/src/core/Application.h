@@ -16,7 +16,7 @@ namespace Bb {
 		Application();
 		~Application();
 
-		static Application* m_singleton;
+		static Application* s_Instance;
 
 	};
 
