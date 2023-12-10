@@ -4,21 +4,21 @@
 
 namespace Bb {
 
-	void Log(const char* message, LogLevel logLevel)
+	void Log(std::string message, LogLevel logLevel)
 	{
 
 		switch (logLevel) {
 
 		default:
-			LogManager::GetLog()->info(message);
+			LogManager::GetLogger()->info(message);
 			break;
 
 		case LogLevel::Warning:
-			LogManager::GetLog()->warn(message);
+			LogManager::GetLogger()->warn(message);
 			break;
 
 		case LogLevel::Error:
-			LogManager::GetLog()->error(message);
+			LogManager::GetLogger()->error(message);
 			break;
 
 		}

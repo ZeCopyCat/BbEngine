@@ -6,10 +6,42 @@
     <ClInclude Include="src\Bb.h" />
     <ClInclude Include="src\core\Log.h" />
     <ClInclude Include="src\core\LogManager.h" />
+    <ClInclude Include="src\renderer\Renderer.h" />
+    <ClInclude Include="src\structures\Vector2\Vector2f.h" />
+    <ClInclude Include="src\structures\Vector2\Vector2u.h" />
+    <ClInclude Include="src\structures\Vector2\Vector2i.h" />
+    <ClInclude Include="src\structures\Vector2.h" />
+    <ClInclude Include="src\renderer\Window.h" />
+    <ClInclude Include="src\io\FileReader.h" />
+    <ClInclude Include="src\imgui\imconfig.h" />
+    <ClInclude Include="src\imgui\imconfig-SFML.h" />
+    <ClInclude Include="src\imgui\imgui.h" />
+    <ClInclude Include="src\imgui\imgui_internal.h" />
+    <ClInclude Include="src\imgui\imgui-SFML.h" />
+    <ClInclude Include="src\imgui\imgui-SFML_export.h" />
+    <ClInclude Include="src\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\io\FileWriter.h" />
+    <ClInclude Include="src\io\SettingsReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
     <ClCompile Include="src\core\Log.cpp" />
     <ClCompile Include="src\core\LogManager.cpp" />
+    <ClCompile Include="src\renderer\Renderer.cpp" />
+    <ClCompile Include="src\structures\Vector2\Vector2f.cpp" />
+    <ClCompile Include="src\structures\Vector2\Vector2u.cpp" />
+    <ClCompile Include="src\structures\Vector2\Vector2i.cpp" />
+    <ClCompile Include="src\renderer\Window.cpp" />
+    <ClCompile Include="src\io\FileReader.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\imgui\imgui-SFML.cpp" />
+    <ClCompile Include="src\io\FileWriter.cpp" />
+    <ClCompile Include="src\io\SettingsReader.cpp" />
   </ItemGroup>
 </Project>

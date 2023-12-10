@@ -2,14 +2,14 @@
 
 namespace Bb {
 
-	std::shared_ptr<spdlog::logger> LogManager::s_Log = nullptr;
+	std::shared_ptr<spdlog::logger> LogManager::s_logger = nullptr;
 
 	void LogManager::Initialize()
 	{
 
-		s_Log = spdlog::stdout_color_mt("log");
-		s_Log->set_level(spdlog::level::trace);
-		s_Log->set_pattern("(%r) : %^[%=9l]%$ : %v");
+		s_logger = spdlog::stdout_color_mt("log");
+		s_logger->set_level(spdlog::level::trace);
+		s_logger->set_pattern("(%r) : %^[%=9l]%$ : %v");
 
 	}
 

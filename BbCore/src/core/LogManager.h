@@ -10,11 +10,11 @@ namespace Bb {
 
 		static void Initialize();
 
-		inline static std::shared_ptr<spdlog::logger>& GetLog() { return s_Log; }
+		inline static std::shared_ptr<spdlog::logger>& GetLogger() { return s_logger; }
 
 	private:
 
-		static std::shared_ptr<spdlog::logger> s_Log; //Automatic memory management for logger
+		static std::shared_ptr<spdlog::logger> s_logger; // Automatic memory management for logger
 
 	};
 

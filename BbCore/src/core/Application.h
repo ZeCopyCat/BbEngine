@@ -9,14 +9,14 @@ namespace Bb {
 	public:
 
 		static void Run();
-		static Application& Get();
+		inline static Application& Get() { return *s_instance; };
 
 	private:
 
 		Application();
 		~Application();
 
-		static Application* s_Instance;
+		static Application* s_instance;
 
 	};
 
