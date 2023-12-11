@@ -26,10 +26,14 @@ namespace Bb {
 
 	}
 
-	Vector2u Vector2u::operator=(const Vector2u& other) {
+	Vector2u Vector2u::operator=(const Vector2u& other)
+	{
 
-		return Vector2u(other);
+		x = other.x;
+		y = other.y;
 
+		return *this;
+	
 	}
 
 	// BINARY ARITHMETIC OPERATORS

@@ -10,7 +10,7 @@ namespace Bb {
 		Vector2f(const Vector2f& other);
 		Vector2f(Vector2f&& other) = delete;
 
-		float x, y;
+		unsigned int x, y;
 
 		// ASSIGNMENT
 

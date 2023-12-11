@@ -27,6 +27,7 @@
     <ClInclude Include="src\renderer\RenderMask.h" />
     <ClInclude Include="src\core\Errorcodes.h" />
     <ClInclude Include="src\core\EntryPoint.h" />
+    <ClInclude Include="src\renderer\Buffers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
@@ -45,5 +46,6 @@
     <ClCompile Include="src\imgui\imgui-SFML.cpp" />
     <ClCompile Include="src\io\FileWriter.cpp" />
     <ClCompile Include="src\io\SettingsReader.cpp" />
+    <ClCompile Include="src\renderer\Buffers.cpp" />
   </ItemGroup>
 </Project>

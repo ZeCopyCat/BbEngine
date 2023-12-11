@@ -16,6 +16,7 @@
     <ClInclude Include="src\io\FileReader.h" />
     <ClInclude Include="src\io\FileWriter.h" />
     <ClInclude Include="src\io\SettingsReader.h" />
+    <ClInclude Include="src\renderer\Buffers.h" />
     <ClInclude Include="src\renderer\Renderee.h" />
     <ClInclude Include="src\renderer\Renderer.h" />
     <ClInclude Include="src\Bb.h" />
@@ -42,6 +43,7 @@
     <ClCompile Include="src\io\FileReader.cpp" />
     <ClCompile Include="src\io\FileWriter.cpp" />
     <ClCompile Include="src\io\SettingsReader.cpp" />
+    <ClCompile Include="src\renderer\Buffers.cpp" />
     <ClCompile Include="src\renderer\Renderer.cpp" />
     <ClCompile Include="src\core\Application.cpp" />
     <ClCompile Include="src\core\Log.cpp" />

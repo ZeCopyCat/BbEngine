@@ -17,14 +17,7 @@ namespace Bb {
 
             LOG_WARNING("EngineSettings.ini could not be found. Creating defaults now.");
 
-            FileWriter::OpenFile("EngineSettings.ini");
-
-            FileWriter::WriteLine("[Settings]");
-            FileWriter::WriteLine("ResolutionX=1280");
-            FileWriter::WriteLine("ResolutionY=720");
-            FileWriter::Write("MaximumRenderees=" + std::to_string(DEFAULT_MAXIMUM_RENDEREES));
-
-            FileWriter::CloseFile();
+            WriteCurrentSettings();
 
         }
         else {
@@ -39,6 +32,20 @@ namespace Bb {
             FileReader::CloseFile();
 
         }
+
+    }
+
+    void SettingsReader::WriteCurrentSettings()
+    {
+
+        FileWriter::OpenFile("EngineSettings.ini");
+
+        FileWriter::WriteLine("[Settings]");
+        FileWriter::WriteLine("ResolutionX=" + std::to_string(s_resolution.x));
+        FileWriter::WriteLine("ResolutionY=" + std::to_string(s_resolution.y));
+        FileWriter::Write("MaximumRenderees=" + std::to_string(s_maximumRenderees));
+
+        FileWriter::CloseFile();
 
     }
 

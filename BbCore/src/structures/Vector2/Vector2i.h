@@ -6,11 +6,11 @@ namespace Bb {
 
 	struct CORE Vector2i {
 
-		Vector2i(int x = 0.f, int y = 0.f);
+		Vector2i(int x = 0, int y = 0);
 		Vector2i(const Vector2i& other);
 		Vector2i(Vector2i&& other) = delete;
 
-		int x, y;
+		unsigned int x, y;
 
 		// ASSIGNMENT
 

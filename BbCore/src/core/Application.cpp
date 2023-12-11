@@ -53,6 +53,8 @@ namespace Bb {
 
 			}
 
+			Renderer::Render();
+
 			if (queueApplicationClose)
 				break;
 

@@ -6,7 +6,7 @@ namespace Bb {
 
 	struct CORE Vector2u {
 
-		Vector2u(unsigned int x = 0.f, unsigned int y = 0.f);
+		Vector2u(unsigned int x = 0u, unsigned int y = 0u);
 		Vector2u(const Vector2u& other);
 		Vector2u(Vector2u&& other) = delete;
 

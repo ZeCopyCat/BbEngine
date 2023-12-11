@@ -17,15 +17,22 @@ namespace Bb {
 		static void CloseWindow();
 
 		inline static CORE Window& GetWindow() { return *s_window; }
-		inline static bool IsOpen() { return s_window->renderWindow.isOpen(); }
-		static bool PollEvents(sf::Event& event) { return s_window->renderWindow.pollEvent(event); }
+		inline static bool IsOpen() { return s_window->m_renderWindow.isOpen(); }
+		static bool PollEvents(sf::Event& event);
+		static void RenderVisibleBuffer();
+
+		inline static Vector2u GetResolution() { return s_window->m_resolution; }
+		static void SetResolution(Vector2u resolution);
+		static void SetResolution(unsigned int width, unsigned int height);
 
 	private:
 
-		sf::RenderWindow renderWindow;
+		sf::RenderWindow m_renderWindow;
+		Vector2u m_resolution;
 
 		Window();
 
+		void FixLetterboxing();
 
 		static Window* s_window;
 

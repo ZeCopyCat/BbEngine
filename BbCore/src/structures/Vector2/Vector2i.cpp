@@ -26,9 +26,13 @@ namespace Bb {
 
 	}
 
-	Vector2i Vector2i::operator=(const Vector2i& other) {
+	Vector2i Vector2i::operator=(const Vector2i& other)
+	{
 
-		return Vector2i(other);
+		x = other.x;
+		y = other.y;
+
+		return *this;
 
 	}
 
