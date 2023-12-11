@@ -3,7 +3,6 @@
 #include <SFML/Window/Event.hpp>
 
 #include "Log.h"
-#include "LogManager.h"
 #include "../renderer/Renderer.h"
 #include "../renderer/Window.h"
 #include "../core/Application.h"
@@ -13,21 +12,21 @@ namespace Bb {
 
 	Application* Application::s_instance = nullptr;
 
-	Application::Application()
+	void Application::Initialize()
 	{
 
 		LogManager::Initialize();
-		Log("Reading Settings...");
+		LOG("Reading Settings...");
 		SettingsReader::ReadSettings();
-		Log("Starting Renderer...");
+		LOG("Starting Renderer...");
 		Renderer::Initialize();
 
 	}
 
-	Application::~Application()
+	void Application::Shutdown()
 	{
 
-		Log("Closing Renderer...");
+		LOG("Closing Renderer...");
 		Renderer::Shutdown();
 
 	}
@@ -35,16 +34,14 @@ namespace Bb {
 	void Application::Run()
 	{
 
-#ifdef _DEBUG
-		// Don't allow someone to run more than once.
-		if (s_instance)
-			return;
-#endif
-
-		// Throw a singleton onto the heap.
-		s_instance = new Application();
+		Initialize();
 
 		Window& window = Window::GetWindow();
+
+		bool queueApplicationClose = false;
+
+		RendereeID myBoxID = Renderer::InstantiateRenderee(); //D
+		Renderee& myBox = Renderer::GetRenderee(myBoxID); //D
 
 		while (window.IsOpen()) {
 
@@ -52,15 +49,20 @@ namespace Bb {
 			while (window.PollEvents(event)) {
 
 				if (event.type == sf::Event::Closed)
-					window.renderWindow.close(); //HACK
-			
+					queueApplicationClose = true;
+
 			}
 
-			Renderer::Render();
+			if (queueApplicationClose)
+				break;
 
 		}
 
-		delete s_instance;
+		Renderer::DestroyRenderee(myBoxID); //D
+		
+		Shutdown();
+
+		return;
 
 	}
 

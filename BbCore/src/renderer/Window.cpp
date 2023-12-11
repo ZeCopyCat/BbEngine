@@ -23,7 +23,7 @@ namespace Bb {
 #ifdef _DEBUG
         if (s_window) {
 
-            Log("Attempting to open window when a window already exists! (Window.cpp)", LogLevel::Error);
+            LOG_ERROR("Attempting to open window when a window already exists! (Window.cpp)");
 
             return nullptr;
 

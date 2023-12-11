@@ -14,7 +14,7 @@ namespace Bb {
 #ifdef _DEBUG
 		if (s_currentFile.is_open()) {
 
-			Log("Attempting to open a file while the FileWriter already has a file currently open. (FileWriter.cpp)", LogLevel::Error);
+			LOG_ERROR("Attempting to open a file while the FileWriter already has a file currently open. (FileWriter.cpp)");
 			return;
 
 		}
@@ -37,7 +37,7 @@ namespace Bb {
 #ifdef _DEBUG
 		if (!s_currentFile.is_open()) {
 
-			Log("Attempting to write to a file while the FileWriter has no file currently open. (FileWriter.cpp)", LogLevel::Error);
+			LOG_ERROR("Attempting to write to a file while the FileWriter has no file currently open. (FileWriter.cpp)");
 			return;
 
 		}
@@ -53,7 +53,7 @@ namespace Bb {
 #ifdef _DEBUG
 		if (!s_currentFile.is_open()) {
 
-			Log("Attempting to write a line to a file while the FileWriter has no file currently open. (FileWriter.cpp)", LogLevel::Error);
+			LOG_ERROR("Attempting to write a line to a file while the FileWriter has no file currently open. (FileWriter.cpp)");
 			return;
 
 		}
@@ -69,7 +69,7 @@ namespace Bb {
 #ifdef _DEBUG
 		if (!s_currentFile.is_open()) {
 
-			Log("Attempting to close a file while the FileWriter has no file currently open. (FileWriter.cpp)", LogLevel::Error);
+			LOG_ERROR("Attempting to close a file while the FileWriter has no file currently open. (FileWriter.cpp)");
 			return;
 
 		}

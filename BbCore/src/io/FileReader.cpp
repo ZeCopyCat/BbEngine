@@ -13,7 +13,7 @@ namespace Bb {
 #ifdef _DEBUG
         if (s_currentFile.is_open()) {
 
-            Log("Attempting to open a file while the FileReader already has a file currently open. (FileReader.cpp)", LogLevel::Error);
+            LOG_ERROR("Attempting to open a file while the FileReader already has a file currently open. (FileReader.cpp)");
             return;
 
         }
@@ -38,7 +38,7 @@ namespace Bb {
 #ifdef _DEBUG
         if (!s_currentFile.is_open()) {
 
-            Log("Attempting to read check if at end of file while the FileReader has no file currently open. (FileReader.cpp)", LogLevel::Error);
+            LOG_ERROR("Attempting to read check if at end of file while the FileReader has no file currently open. (FileReader.cpp)");
             return true;
 
         }
@@ -61,7 +61,7 @@ namespace Bb {
 #ifdef _DEBUG
         if (!s_currentFile.is_open()) {
 
-            Log("Attempting to read a file's line while the FileReader has no file currently open. (FileReader.cpp)", LogLevel::Error);
+            LOG_ERROR("Attempting to read a file's line while the FileReader has no file currently open. (FileReader.cpp)");
             return "";
 
         }
@@ -80,7 +80,7 @@ namespace Bb {
 #ifdef _DEBUG
         if (!s_currentFile.is_open()) {
 
-            Log("Attempting to close a file while the FileReader has no file currently open. (FileReader.cpp)", LogLevel::Error);
+            LOG_ERROR("Attempting to close a file while the FileReader has no file currently open. (FileReader.cpp)");
             return;
 
         }

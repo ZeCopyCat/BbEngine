@@ -18,10 +18,11 @@ namespace Bb {
 
 		inline static CORE Window& GetWindow() { return *s_window; }
 		inline static bool IsOpen() { return s_window->renderWindow.isOpen(); }
-		inline static bool PollEvents(sf::Event& event) { return s_window->renderWindow.pollEvent(event); }
+		static bool PollEvents(sf::Event& event) { return s_window->renderWindow.pollEvent(event); }
+
+	private:
 
 		sf::RenderWindow renderWindow;
-	private:
 
 		Window();
 

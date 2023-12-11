@@ -11,15 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\EntryPoint.h" />
+    <ClInclude Include="src\core\Errorcodes.h" />
     <ClInclude Include="src\io\FileReader.h" />
     <ClInclude Include="src\io\FileWriter.h" />
     <ClInclude Include="src\io\SettingsReader.h" />
+    <ClInclude Include="src\renderer\Renderee.h" />
     <ClInclude Include="src\renderer\Renderer.h" />
     <ClInclude Include="src\Bb.h" />
     <ClInclude Include="src\core\Application.h" />
     <ClInclude Include="src\core\Log.h" />
-    <ClInclude Include="src\core\LogManager.h" />
     <ClInclude Include="src\core\Macros.h" />
+    <ClInclude Include="src\renderer\RenderMask.h" />
     <ClInclude Include="src\structures\Vector2.h" />
     <ClInclude Include="src\structures\Vector2\Vector2i.h" />
     <ClInclude Include="src\structures\Vector2\Vector2u.h" />
@@ -42,7 +45,6 @@
     <ClCompile Include="src\renderer\Renderer.cpp" />
     <ClCompile Include="src\core\Application.cpp" />
     <ClCompile Include="src\core\Log.cpp" />
-    <ClCompile Include="src\core\LogManager.cpp" />
     <ClCompile Include="src\structures\Vector2\Vector2i.cpp" />
     <ClCompile Include="src\structures\Vector2\Vector2u.cpp" />
     <ClCompile Include="src\structures\Vector2\Vector2f.cpp" />
@@ -106,7 +108,7 @@
       <AdditionalIncludeDirectories>D:\Visual Studio\Projects\BbEngine\BbCore\vendor\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>NotSet</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Visual Studio\Projects\BbEngine\BbCore\vendor\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;opengl32.lib;openal32.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;freetype.lib;flac.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -129,7 +131,7 @@
       <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>NotSet</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>

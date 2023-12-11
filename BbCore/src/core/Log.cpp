@@ -1,24 +1,33 @@
 #include "Log.h"
 
-#include "LogManager.h"
-
 namespace Bb {
 
-	void Log(std::string message, LogLevel logLevel)
+	std::shared_ptr<spdlog::logger> LogManager::s_logger = nullptr;
+
+	void LogManager::Initialize()
+	{
+
+		s_logger = spdlog::stdout_color_mt("log");
+		s_logger->set_level(spdlog::level::trace);
+		s_logger->set_pattern("(%r) : %^[%=9l]%$ : %v");
+
+	}
+
+	void LogManager::LogToConsole(std::string message, LogLevel logLevel)
 	{
 
 		switch (logLevel) {
 
 		default:
-			LogManager::GetLogger()->info(message);
+			s_logger->info(message);
 			break;
 
 		case LogLevel::Warning:
-			LogManager::GetLogger()->warn(message);
+			s_logger->warn(message);
 			break;
 
 		case LogLevel::Error:
-			LogManager::GetLogger()->error(message);
+			s_logger->error(message);
 			break;
 
 		}

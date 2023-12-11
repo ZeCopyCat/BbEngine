@@ -5,7 +5,6 @@
     <ClInclude Include="src\core\Macros.h" />
     <ClInclude Include="src\Bb.h" />
     <ClInclude Include="src\core\Log.h" />
-    <ClInclude Include="src\core\LogManager.h" />
     <ClInclude Include="src\renderer\Renderer.h" />
     <ClInclude Include="src\structures\Vector2\Vector2f.h" />
     <ClInclude Include="src\structures\Vector2\Vector2u.h" />
@@ -24,11 +23,14 @@
     <ClInclude Include="src\imgui\imstb_truetype.h" />
     <ClInclude Include="src\io\FileWriter.h" />
     <ClInclude Include="src\io\SettingsReader.h" />
+    <ClInclude Include="src\renderer\Renderee.h" />
+    <ClInclude Include="src\renderer\RenderMask.h" />
+    <ClInclude Include="src\core\Errorcodes.h" />
+    <ClInclude Include="src\core\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
     <ClCompile Include="src\core\Log.cpp" />
-    <ClCompile Include="src\core\LogManager.cpp" />
     <ClCompile Include="src\renderer\Renderer.cpp" />
     <ClCompile Include="src\structures\Vector2\Vector2f.cpp" />
     <ClCompile Include="src\structures\Vector2\Vector2u.cpp" />

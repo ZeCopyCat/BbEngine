@@ -6,7 +6,8 @@
 
 namespace Bb {
 
-    Vector2u SettingsReader::s_resolution = Vector2u(1280, 720);
+    Vector2u SettingsReader::s_resolution = DEFAULT_RESOLUTION;
+    unsigned int SettingsReader::s_maximumRenderees = DEFAULT_MAXIMUM_RENDEREES;
 
     void SettingsReader::ReadSettings()
     {
@@ -14,13 +15,14 @@ namespace Bb {
         // Load the settings from EngineSettings.ini, or make a new EngineSettings.ini
         if (!FileReader::DoesFileExist("EngineSettings.ini")) {
 
-            Log("EngineSettings.ini could not be found. Creating defaults now.", LogLevel::Info);
+            LOG_WARNING("EngineSettings.ini could not be found. Creating defaults now.");
 
             FileWriter::OpenFile("EngineSettings.ini");
 
             FileWriter::WriteLine("[Settings]");
             FileWriter::WriteLine("ResolutionX=1280");
-            FileWriter::Write("ResolutionY=720");
+            FileWriter::WriteLine("ResolutionY=720");
+            FileWriter::Write("MaximumRenderees=" + std::to_string(DEFAULT_MAXIMUM_RENDEREES));
 
             FileWriter::CloseFile();
 
@@ -32,6 +34,7 @@ namespace Bb {
             FileReader::NextLine();
             s_resolution.x = std::stoi(FileReader::NextLine().substr(12)); // Substring is for "ResolutionX="
             s_resolution.y = std::stoi(FileReader::NextLine().substr(12)); // Substring is for "ResolutionY="
+            s_maximumRenderees = (unsigned int)std::stoi(FileReader::NextLine().substr(17)); // Substring is for "MaximumRenderees="
 
             FileReader::CloseFile();
 

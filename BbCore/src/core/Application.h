@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Macros.h"
+#include "Errorcodes.h"
 
 namespace Bb {
 
@@ -8,13 +9,12 @@ namespace Bb {
 
 	public:
 
-		static void Run();
-		inline static Application& Get() { return *s_instance; };
+		void Run();
 
 	private:
 
-		Application();
-		~Application();
+		void Initialize();
+		void Shutdown();
 
 		static Application* s_instance;
 
