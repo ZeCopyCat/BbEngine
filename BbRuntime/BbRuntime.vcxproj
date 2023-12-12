@@ -53,13 +53,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\Engine\</OutDir>
-    <IntDir>$(SolutionDir)bin\$(Configuration)-int\Engine\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\Runtime\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)-int\Runtime\</IntDir>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\Engine\</OutDir>
-    <IntDir>$(SolutionDir)bin\$(Configuration)-int\Engine\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\Runtime\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)-int\Runtime\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

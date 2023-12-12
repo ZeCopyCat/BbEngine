@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BbEngine", "BbEngine\BbEngine.vcxproj", "{60EAF32E-28FA-42A9-85E8-9952B8FA4102}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BbRuntime", "BbRuntime\BbRuntime.vcxproj", "{60EAF32E-28FA-42A9-85E8-9952B8FA4102}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BbCore", "BbCore\BbCore.vcxproj", "{3D07CC6C-28A4-4586-994E-3DDF905E850C}"
 EndProject

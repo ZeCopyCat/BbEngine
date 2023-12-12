@@ -15,7 +15,7 @@ namespace Bb {
 		void Reset(bool active = false) {
 		
 			this->active = active;
-			RenderMask renderMask = RENDER_MASK_VISIBLE;
+			RenderMask renderMask = RENDER_MASK_WORLD;
 			rectShape = sf::RectangleShape(sf::Vector2f(2.0f, 2.0f));
 			z = 0;
 		
@@ -24,7 +24,7 @@ namespace Bb {
 		sf::RectangleShape rectShape;
 		int z = 0;
 		RendereeID id = 0;
-		RenderMask renderMask = RENDER_MASK_VISIBLE;
+		RenderMask renderMask = RENDER_MASK_WORLD;
 		bool active = false;
 
 	};

@@ -2,6 +2,8 @@
 
 #include <array>
 #include <SFML/Graphics/RenderTexture.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include "../structures/Vector2.h"
 #include "RenderMask.h"
 
 namespace Bb {
@@ -22,9 +24,17 @@ namespace Bb {
 		
 		*/
 
-	private:
+		inline sf::RectangleShape& GetRectangleShape() { return m_shape; }
+		inline sf::RenderTexture& GetRenderTexture() { return m_texture; }
 
+		void CreateTexture(Vector2u resolution);
+		void Compile();
+
+		Buffer();
+
+	private:
 		sf::RenderTexture m_texture;
+		sf::RectangleShape m_shape;
 
 	};
 
@@ -32,11 +42,20 @@ namespace Bb {
 
 	public:
 
-		inline static Buffer& GetBuffer(unsigned int buffer) { return s_buffers[buffer]; }
+		~BufferManager() = default;
+
+		static void Initialize();
+		static void Shutdown();
+		static void SetBufferResolution(unsigned int buffer, Vector2u resolution);
+		inline static Buffer& GetBuffer(unsigned int buffer) { return s_instance->m_buffers[buffer]; }
+		inline static std::array<Buffer, 7>& GetBuffers() { return s_instance->m_buffers; }
 
 	private:
 
-		static std::array<Buffer, 6> s_buffers;
+		BufferManager() = default;
+
+		static BufferManager* s_instance;
+		std::array<Buffer, 7> m_buffers;
 
 	};
 

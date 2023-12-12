@@ -2,6 +2,7 @@
 
 #include <stack>
 #include <vector>
+#include <set>
 #include "Renderee.h"
 
 namespace Bb {
@@ -25,6 +26,7 @@ namespace Bb {
 		static std::vector<Renderee> s_renderees;
 		static std::vector<RendereeID> s_sortedRendereeIDs;
 		static std::stack<RendereeID> s_availableRendereeIDs;
+		static std::set<RendereeID> s_unavailableRendereeIDs;
 
 	};
 

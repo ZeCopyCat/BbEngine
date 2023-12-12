@@ -6,9 +6,6 @@
     <ClInclude Include="src\Bb.h" />
     <ClInclude Include="src\core\Log.h" />
     <ClInclude Include="src\renderer\Renderer.h" />
-    <ClInclude Include="src\structures\Vector2\Vector2f.h" />
-    <ClInclude Include="src\structures\Vector2\Vector2u.h" />
-    <ClInclude Include="src\structures\Vector2\Vector2i.h" />
     <ClInclude Include="src\structures\Vector2.h" />
     <ClInclude Include="src\renderer\Window.h" />
     <ClInclude Include="src\io\FileReader.h" />
@@ -28,14 +25,12 @@
     <ClInclude Include="src\core\Errorcodes.h" />
     <ClInclude Include="src\core\EntryPoint.h" />
     <ClInclude Include="src\renderer\Buffers.h" />
+    <ClInclude Include="src\structures\Vector2Macro.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
     <ClCompile Include="src\core\Log.cpp" />
     <ClCompile Include="src\renderer\Renderer.cpp" />
-    <ClCompile Include="src\structures\Vector2\Vector2f.cpp" />
-    <ClCompile Include="src\structures\Vector2\Vector2u.cpp" />
-    <ClCompile Include="src\structures\Vector2\Vector2i.cpp" />
     <ClCompile Include="src\renderer\Window.cpp" />
     <ClCompile Include="src\io\FileReader.cpp" />
     <ClCompile Include="src\imgui\imgui.cpp" />
@@ -47,5 +42,6 @@
     <ClCompile Include="src\io\FileWriter.cpp" />
     <ClCompile Include="src\io\SettingsReader.cpp" />
     <ClCompile Include="src\renderer\Buffers.cpp" />
+    <ClCompile Include="src\structures\Vector2.cpp" />
   </ItemGroup>
 </Project>

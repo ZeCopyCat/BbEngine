@@ -1,9 +1,8 @@
 #include "Window.h"
 
 #include <SFML/Window/Event.hpp>
-#include <SFML/Graphics/RectangleShape.hpp> //D
-#include "../core/Log.h"
 #include "../io/SettingsReader.h"
+#include "../core/Log.h"
 #include "Buffers.h"
 
 namespace Bb {
@@ -63,11 +62,7 @@ namespace Bb {
     {
 
         s_window->m_renderWindow.clear();
-
-        sf::RectangleShape rect(sf::Vector2f(3000.f, 3000.f));
-        rect.setPosition(00.f, 00.f);
-        rect.setFillColor(sf::Color(52, 52, 56));
-        s_window->m_renderWindow.draw(rect);
+        s_window->m_renderWindow.draw(BufferManager::GetBuffer(0).GetRectangleShape());
         s_window->m_renderWindow.display();
 
     }
@@ -109,7 +104,21 @@ namespace Bb {
     void Window::SetResolution(Vector2u resolution)
     {
 
+        // Set the resolutions
         s_window->m_resolution = resolution;
+        BufferManager::SetBufferResolution(0, Vector2u(resolution.x, resolution.y));
+        BufferManager::SetBufferResolution(1, Vector2u(resolution.x, resolution.y));
+        BufferManager::SetBufferResolution(2, Vector2u(resolution.x, resolution.y));
+
+        // Fix the view of the window
+        sf::View newView = s_window->m_renderWindow.getView();
+
+        newView.setSize(sf::Vector2f((float)resolution.x, (float)resolution.y));
+        newView.setCenter(sf::Vector2f(resolution.x / 2.f, resolution.y / 2.f));
+
+        s_window->m_renderWindow.setView(newView);
+
+        // Letterbox the final product
         s_window->FixLetterboxing();
 
     }
